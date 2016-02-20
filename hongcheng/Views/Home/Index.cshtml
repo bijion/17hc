@@ -1,20 +1,14 @@
 ﻿@using hongcheng.Resources;
 @{
-    ViewBag.Title = "红成电商";
+    ViewBag.Title = "红林电商";
 }
 
-<div class="jumbotron">
-    <h1>红成电商</h1>
+<div class="jumbotron">    
     <p class="lead">影响农村的三件大事：优质工业品优惠进农村，生鲜土特产品卖出去，解决农民借贷款难三大问题。解决部分回乡退伍军人毕业大学生待业青年有工作干，尽早使大部分农民脱贫致富！</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">登陆 &raquo;</a></p>
+    <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">Navigation</li>
+        <li>@Html.ActionLink("关于", "About", "Home")</li>
+        <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
+    </ul>
 </div>
 
-@*<div class="row">
-    <div class="col-md-4">
-        <h2>我们的宗旨</h2>
-        <p>
-            与京东努力合作，迅速及时推广发展乡村推广员，互惠共赢！公司提供平台，让人人做股东，人人做贡献，人人都受益，公司是大家的更是自己的，人人做到以司为家！
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">规章制度 &raquo;</a></p>
-    </div>
-</div>*@

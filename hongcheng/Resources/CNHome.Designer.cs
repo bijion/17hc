@@ -61,7 +61,7 @@ namespace hongcheng.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 红成电商 - 成就梦想.
+        ///   Looks up a localized string similar to 红林电商 - 成就梦想.
         /// </summary>
         internal static string Title {
             get {

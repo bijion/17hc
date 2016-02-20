@@ -1,7 +1,20 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "关于-红成电商";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<ul data-role="listview" data-inset="true">
+    <li data-role="list-divider">导航栏</li>
+    <li>@Html.ActionLink("回主页", "Index", "Home")</li>    
+</ul>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>我们的宗旨</h2>
+        <p>
+            与京东努力合作，迅速及时推广发展乡村推广员，互惠共赢！公司提供平台，让人人做股东，人人做贡献，人人都受益，公司是大家的更是自己的，人人做到以司为家！
+        </p>
+        <ul>
+            <li class="btn btn-default">@Html.ActionLink("公司规章 &raquo;", "CorpRule", "File")</li>
+        </ul>
+    </div>
+</div>

@@ -191,8 +191,6 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\ajax-loader.gif" />
     <Content Include="Content\images\icons-png\action-black.png" />
     <Content Include="Content\images\icons-png\action-white.png" />
@@ -478,6 +476,7 @@
     <Content Include="Views\User\InfoList.cshtml" />
     <Content Include="Views\Bussi\More.cshtml" />
     <Content Include="Views\File\CorpRule.cshtml" />
+    <Content Include="Views\Shared\_MenuList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

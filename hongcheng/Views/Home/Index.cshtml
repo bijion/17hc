@@ -3,12 +3,14 @@
     ViewBag.Title = "红林电商";
 }
 
-<div class="jumbotron">    
-    <p class="lead">影响农村的三件大事：优质工业品优惠进农村，生鲜土特产品卖出去，解决农民借贷款难三大问题。解决部分回乡退伍军人毕业大学生待业青年有工作干，尽早使大部分农民脱贫致富！</p>
-    <ul data-role="listview" data-inset="true">
-        <li data-role="list-divider">Navigation</li>
-        <li>@Html.ActionLink("关于", "About", "Home")</li>
-        <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
-    </ul>
-</div>
+@*<div class="jumbotron">    
+    <p class="lead">红林电商在农村：让我们共同解决优质工业品优惠进农村，生鲜土特产品卖出去，解决农民借贷款难三大问题！</p>    
+</div>*@
+
+<ul data-role="listview" data-inset="true">    
+    <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+    <li>@Html.ActionLink("登陆", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("关于", "About", "Home")</li>
+    <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
+</ul>
 

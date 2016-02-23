@@ -58,10 +58,10 @@ namespace hongcheng
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            //app(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "1105198962",
+            //    ClientSecret = "GZUsic21TdKaOZVn"
             //});
         }
     }

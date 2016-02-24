@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="honglinModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="honglinModelStoreContainer">
+          <EntitySet Name="federateuser" EntityType="honglinModel.Store.federateuser" store:Type="Tables" store:Schema="honglin" store:Name="federateuser">
+            <DefiningQuery>SELECT
+      `federateuser`.`UserId`, 
+      `federateuser`.`Source`, 
+      `federateuser`.`Name`, 
+      `federateuser`.`FirstAccessTime`, 
+      `federateuser`.`LastAccessTime`
+      FROM `federateuser` AS `federateuser`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="usalechildren" EntityType="honglinModel.Store.usalechildren" store:Type="Tables" store:Schema="honglin" store:Name="usalechildren">
+            <DefiningQuery>SELECT
+      `usalechildren`.`UserId`, 
+      `usalechildren`.`ChildId`, 
+      `usalechildren`.`Reviewer`, 
+      `usalechildren`.`AffectTime`, 
+      `usalechildren`.`Comment`
+      FROM `usalechildren` AS `usalechildren`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="usaleparent" EntityType="honglinModel.Store.usaleparent" store:Type="Tables" store:Schema="honglin" store:Name="usaleparent">
+            <DefiningQuery>SELECT
+      `usaleparent`.`UserId`, 
+      `usaleparent`.`ParentId`, 
+      `usaleparent`.`Comment`
+      FROM `usaleparent` AS `usaleparent`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="uscorehistory" EntityType="honglinModel.Store.uscorehistory" store:Type="Tables" store:Schema="honglin" store:Name="uscorehistory">
+            <DefiningQuery>SELECT
+      `uscorehistory`.`UserId`, 
+      `uscorehistory`.`Event`, 
+      `uscorehistory`.`Score`, 
+      `uscorehistory`.`ChangeTime`, 
+      `uscorehistory`.`Comment`
+      FROM `uscorehistory` AS `uscorehistory`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="user" EntityType="honglinModel.Store.user" store:Type="Tables" Schema="honglin" />
+          <EntitySet Name="userdetail" EntityType="honglinModel.Store.userdetail" store:Type="Tables" store:Schema="honglin" store:Name="userdetail">
+            <DefiningQuery>SELECT
+      `userdetail`.`UserId`, 
+      `userdetail`.`BirthDate`, 
+      `userdetail`.`IDCard`, 
+      `userdetail`.`WebChat`, 
+      `userdetail`.`QQ`, 
+      `userdetail`.`Email`
+      FROM `userdetail` AS `userdetail`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="userjobinfo" EntityType="honglinModel.Store.userjobinfo" store:Type="Tables" store:Schema="honglin" store:Name="userjobinfo">
+            <DefiningQuery>SELECT
+      `userjobinfo`.`UserId`, 
+      `userjobinfo`.`Job`, 
+      `userjobinfo`.`Place`, 
+      `userjobinfo`.`JobOrder`, 
+      `userjobinfo`.`EntryTime`, 
+      `userjobinfo`.`Position`, 
+      `userjobinfo`.`LeaveTime`
+      FROM `userjobinfo` AS `userjobinfo`</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.honglin.federateuser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="federateuser">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Source" />
+          </Key>
+          <Property Name="UserId" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="Name" Type="text" />
+          <Property Name="FirstAccessTime" Type="datetime" />
+          <Property Name="LastAccessTime" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.honglin.usalechildren' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="usalechildren">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="Reviewer" />
+            <PropertyRef Name="AffectTime" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ChildId" Type="int" Nullable="false" />
+          <Property Name="Reviewer" Type="int" Nullable="false" />
+          <Property Name="AffectTime" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="text" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.honglin.usaleparent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="usaleparent">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ParentId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="Comment" Type="text" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.honglin.uscorehistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="uscorehistory">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Event" />
+            <PropertyRef Name="Score" />
+            <PropertyRef Name="ChangeTime" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Event" Type="text" Nullable="false" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="ChangeTime" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="text" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="PhoneNum" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="PhoneNum" Type="int" Nullable="false" />
+          <Property Name="Name" Type="text" />
+          <Property Name="FedId" Type="varchar" MaxLength="32" />
+          <Property Name="gender" Type="char" MaxLength="1" />
+          <Property Name="FirstAccessTime" Type="datetime" />
+          <Property Name="LastAccessTime" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.honglin.userdetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="userdetail">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="BirthDate" />
+            <PropertyRef Name="IDCard" />
+            <PropertyRef Name="WebChat" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="BirthDate" Type="text" Nullable="false" />
+          <Property Name="IDCard" Type="text" Nullable="false" />
+          <Property Name="WebChat" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="QQ" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'def.honglin.userjobinfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="userjobinfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Job" />
+            <PropertyRef Name="Place" />
+            <PropertyRef Name="Position" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Job" Type="text" Nullable="false" />
+          <Property Name="Place" Type="text" Nullable="false" />
+          <Property Name="JobOrder" Type="int" />
+          <Property Name="EntryTime" Type="datetime" />
+          <Property Name="Position" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="LeaveTime" Type="datetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="honglinModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="honglinEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="federateusers" EntityType="honglinModel.federateuser" />
+          <EntitySet Name="usalechildrens" EntityType="honglinModel.usalechildren" />
+          <EntitySet Name="usaleparents" EntityType="honglinModel.usaleparent" />
+          <EntitySet Name="uscorehistories" EntityType="honglinModel.uscorehistory" />
+          <EntitySet Name="users" EntityType="honglinModel.user" />
+          <EntitySet Name="userdetails" EntityType="honglinModel.userdetail" />
+          <EntitySet Name="userjobinfoes" EntityType="honglinModel.userjobinfo" />
+        </EntityContainer>
+        <EntityType Name="federateuser">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Source" />
+          </Key>
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="Source" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="FirstAccessTime" Type="DateTime" />
+          <Property Name="LastAccessTime" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="usalechildren">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="Reviewer" />
+            <PropertyRef Name="AffectTime" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ChildId" Type="Int32" Nullable="false" />
+          <Property Name="Reviewer" Type="Int32" Nullable="false" />
+          <Property Name="AffectTime" Type="DateTime" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="usaleparent">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="ParentId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="uscorehistory">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Event" />
+            <PropertyRef Name="Score" />
+            <PropertyRef Name="ChangeTime" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Event" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="Score" Type="Int32" Nullable="false" />
+          <Property Name="ChangeTime" Type="DateTime" Nullable="false" />
+          <Property Name="Comment" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="PhoneNum" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="PhoneNum" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="FedId" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="gender" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="FirstAccessTime" Type="DateTime" />
+          <Property Name="LastAccessTime" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="userdetail">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="BirthDate" />
+            <PropertyRef Name="IDCard" />
+            <PropertyRef Name="WebChat" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="BirthDate" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="IDCard" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="WebChat" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="QQ" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="userjobinfo">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Job" />
+            <PropertyRef Name="Place" />
+            <PropertyRef Name="Position" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Job" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="Place" Type="String" Nullable="false" MaxLength="65535" Unicode="false" FixedLength="false" />
+          <Property Name="JobOrder" Type="Int32" />
+          <Property Name="EntryTime" Type="DateTime" />
+          <Property Name="Position" Type="String" Nullable="false" MaxLength="32" Unicode="false" FixedLength="false" />
+          <Property Name="LeaveTime" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="honglinModelStoreContainer" CdmEntityContainer="honglinEntities">
+          <EntitySetMapping Name="federateusers">
+            <EntityTypeMapping TypeName="honglinModel.federateuser">
+              <MappingFragment StoreEntitySet="federateuser">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FirstAccessTime" ColumnName="FirstAccessTime" />
+                <ScalarProperty Name="LastAccessTime" ColumnName="LastAccessTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usalechildrens">
+            <EntityTypeMapping TypeName="honglinModel.usalechildren">
+              <MappingFragment StoreEntitySet="usalechildren">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+                <ScalarProperty Name="Reviewer" ColumnName="Reviewer" />
+                <ScalarProperty Name="AffectTime" ColumnName="AffectTime" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usaleparents">
+            <EntityTypeMapping TypeName="honglinModel.usaleparent">
+              <MappingFragment StoreEntitySet="usaleparent">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uscorehistories">
+            <EntityTypeMapping TypeName="honglinModel.uscorehistory">
+              <MappingFragment StoreEntitySet="uscorehistory">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Event" ColumnName="Event" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="ChangeTime" ColumnName="ChangeTime" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="honglinModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FedId" ColumnName="FedId" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="FirstAccessTime" ColumnName="FirstAccessTime" />
+                <ScalarProperty Name="LastAccessTime" ColumnName="LastAccessTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userdetails">
+            <EntityTypeMapping TypeName="honglinModel.userdetail">
+              <MappingFragment StoreEntitySet="userdetail">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="IDCard" ColumnName="IDCard" />
+                <ScalarProperty Name="WebChat" ColumnName="WebChat" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userjobinfoes">
+            <EntityTypeMapping TypeName="honglinModel.userjobinfo">
+              <MappingFragment StoreEntitySet="userjobinfo">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="JobOrder" ColumnName="JobOrder" />
+                <ScalarProperty Name="EntryTime" ColumnName="EntryTime" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="LeaveTime" ColumnName="LeaveTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -12,7 +12,7 @@ namespace hongcheng.Models
 
     public class ExternalLoginListViewModel
     {
-        public string ReturnUrl { get; set; }
+        public string ReturnUrl { get; set; }        
     }
 
     public class SendCodeViewModel
@@ -77,6 +77,28 @@ namespace hongcheng.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+    }
+
+    public class RegisterPhoneViewModel
+    {
+        [Required]
+        [Phone]        
+        [Display(Name = "请输入手机号")]
+        [UIHint("请输入手机号")]        
+        public string PhoneNum { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [UIHint("请输入密码")]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [UIHint("请再次输入密码")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }

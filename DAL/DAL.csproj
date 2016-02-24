@@ -57,6 +57,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,17 +69,70 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Entities\federateuser.cs">
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\honglin.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>honglin.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\honglin.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\honglin.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>honglin.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\usalechildren.cs">
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\usaleparent.cs">
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\uscorehistory.cs">
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\user.cs">
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\userdetail.cs">
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\userjobinfo.cs">
+      <DependentUpon>honglin.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="Entities\honglin.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>honglin.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\honglin.edmx.diagram">
+      <DependentUpon>honglin.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\honglin.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>honglin.edmx</DependentUpon>
+      <LastGenOutput>honglin.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\honglin.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>honglin.edmx</DependentUpon>
+      <LastGenOutput>honglin.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

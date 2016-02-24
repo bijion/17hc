@@ -9,7 +9,7 @@ namespace hongcheng
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-1.*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
             "~/Scripts/jquery-ui*"));
@@ -20,12 +20,15 @@ namespace hongcheng
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/modernizr-*"));                       
 
             bundles.Add(new ScriptBundle("~/bundles/jquerymobile").Include("~/Scripts/jquery.mobile*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/externallogin").Include("~/Scripts/qc_loader*"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(                      
-                      "~/Content/site.css"));            
+                      "~/Content/site.css",
+                      "~/Content/weui.min.css"));            
 
             bundles.Add(new StyleBundle("~/Content/mobilecss").Include("~/Content/jquery.mobile*"));
 

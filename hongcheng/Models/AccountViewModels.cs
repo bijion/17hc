@@ -62,6 +62,22 @@ namespace hongcheng.Models
         public bool RememberMe { get; set; }
     }
 
+    public class LoginPhoneViewModel
+    {
+        [Required]
+        [Display(Name = "请输入手机号")]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "请输入密码")]
+        public string Password { get; set; }
+
+        [Display(Name = "选择记住密码?")]
+        public bool RememberMe { get; set; }
+    }
+
     public class RegisterViewModel
     {
         [Required]

@@ -1,5 +1,5 @@
 ﻿@using hongcheng.Models
-@model LoginViewModel
+@model  LoginPhoneViewModel
 @{
     ViewBag.Title = "登陆";
 }
@@ -11,7 +11,6 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -42,7 +41,7 @@
                     </div>
                 </div>
                 <p>
-                    @Html.ActionLink("Register as a new user", "Register")
+                    @Html.ActionLink("没有账号？ 点我注册新用户", "Register")
                 </p>
                 @* Enable this once you have account confirmation enabled for password reset functionality
                     <p>
@@ -51,9 +50,11 @@
             }
         </section>
     </div>
+    <hr />
+
     <div class="col-md-4">
         <section id="socialLoginForm">
-            <h4>第三方登陆：</h4>
+            <h4>您也可以点第三方登陆：</h4>
             <hr />
             <span id="qqbtn"></span>
         </section>
@@ -62,4 +63,9 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        QC.Login({
+           btnId:"qqbtn"    //插入按钮的节点id
+    });</script>
 }
+

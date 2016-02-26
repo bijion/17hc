@@ -21,5 +21,6 @@ namespace DAL.Entities
         public string gender { get; set; }
         public Nullable<System.DateTime> FirstAccessTime { get; set; }
         public Nullable<System.DateTime> LastAccessTime { get; set; }
+        public string Pwd { get; set; }
     }
 }

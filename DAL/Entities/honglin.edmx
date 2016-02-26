@@ -4,82 +4,22 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="honglinModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="honglinModelStoreContainer">
-          <EntitySet Name="federateuser" EntityType="honglinModel.Store.federateuser" store:Type="Tables" store:Schema="honglin" store:Name="federateuser">
-            <DefiningQuery>SELECT
-      `federateuser`.`UserId`, 
-      `federateuser`.`Source`, 
-      `federateuser`.`Name`, 
-      `federateuser`.`FirstAccessTime`, 
-      `federateuser`.`LastAccessTime`
-      FROM `federateuser` AS `federateuser`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="usalechildren" EntityType="honglinModel.Store.usalechildren" store:Type="Tables" store:Schema="honglin" store:Name="usalechildren">
-            <DefiningQuery>SELECT
-      `usalechildren`.`UserId`, 
-      `usalechildren`.`ChildId`, 
-      `usalechildren`.`Reviewer`, 
-      `usalechildren`.`AffectTime`, 
-      `usalechildren`.`Comment`
-      FROM `usalechildren` AS `usalechildren`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="usaleparent" EntityType="honglinModel.Store.usaleparent" store:Type="Tables" store:Schema="honglin" store:Name="usaleparent">
-            <DefiningQuery>SELECT
-      `usaleparent`.`UserId`, 
-      `usaleparent`.`ParentId`, 
-      `usaleparent`.`Comment`
-      FROM `usaleparent` AS `usaleparent`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="uscorehistory" EntityType="honglinModel.Store.uscorehistory" store:Type="Tables" store:Schema="honglin" store:Name="uscorehistory">
-            <DefiningQuery>SELECT
-      `uscorehistory`.`UserId`, 
-      `uscorehistory`.`Event`, 
-      `uscorehistory`.`Score`, 
-      `uscorehistory`.`ChangeTime`, 
-      `uscorehistory`.`Comment`
-      FROM `uscorehistory` AS `uscorehistory`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="user" EntityType="honglinModel.Store.user" store:Type="Tables" Schema="honglin" />
-          <EntitySet Name="userdetail" EntityType="honglinModel.Store.userdetail" store:Type="Tables" store:Schema="honglin" store:Name="userdetail">
-            <DefiningQuery>SELECT
-      `userdetail`.`UserId`, 
-      `userdetail`.`BirthDate`, 
-      `userdetail`.`IDCard`, 
-      `userdetail`.`WebChat`, 
-      `userdetail`.`QQ`, 
-      `userdetail`.`Email`
-      FROM `userdetail` AS `userdetail`</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="userjobinfo" EntityType="honglinModel.Store.userjobinfo" store:Type="Tables" store:Schema="honglin" store:Name="userjobinfo">
-            <DefiningQuery>SELECT
-      `userjobinfo`.`UserId`, 
-      `userjobinfo`.`Job`, 
-      `userjobinfo`.`Place`, 
-      `userjobinfo`.`JobOrder`, 
-      `userjobinfo`.`EntryTime`, 
-      `userjobinfo`.`Position`, 
-      `userjobinfo`.`LeaveTime`
-      FROM `userjobinfo` AS `userjobinfo`</DefiningQuery>
-          </EntitySet>
-        </EntityContainer>
+    <Schema Namespace="honglinModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'def.honglin.federateuser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'def.honglin.federateuser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="federateuser">
           <Key>
             <PropertyRef Name="UserId" />
             <PropertyRef Name="Source" />
           </Key>
-          <Property Name="UserId" Type="varchar" Nullable="false" MaxLength="32" />
-          <Property Name="Source" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="UserId" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="Source" Type="varchar" MaxLength="32" Nullable="false" />
           <Property Name="Name" Type="text" />
-          <Property Name="FirstAccessTime" Type="datetime" />
-          <Property Name="LastAccessTime" Type="datetime" />
+          <Property Name="FirstAccessTime" Type="datetime" Precision="0" />
+          <Property Name="LastAccessTime" Type="datetime" Precision="0" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'def.honglin.usalechildren' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'def.honglin.usalechildren' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="usalechildren">
           <Key>
             <PropertyRef Name="UserId" />
@@ -90,12 +30,11 @@
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="ChildId" Type="int" Nullable="false" />
           <Property Name="Reviewer" Type="int" Nullable="false" />
-          <Property Name="AffectTime" Type="datetime" Nullable="false" />
+          <Property Name="AffectTime" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="Comment" Type="text" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'def.honglin.usaleparent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'def.honglin.usaleparent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="usaleparent">
           <Key>
             <PropertyRef Name="UserId" />
@@ -106,8 +45,7 @@
           <Property Name="Comment" Type="text" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'def.honglin.uscorehistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'def.honglin.uscorehistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="uscorehistory">
           <Key>
             <PropertyRef Name="UserId" />
@@ -118,7 +56,7 @@
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Event" Type="text" Nullable="false" />
           <Property Name="Score" Type="int" Nullable="false" />
-          <Property Name="ChangeTime" Type="datetime" Nullable="false" />
+          <Property Name="ChangeTime" Type="datetime" Precision="0" Nullable="false" />
           <Property Name="Comment" Type="text" />
         </EntityType>
         <EntityType Name="user">
@@ -129,13 +67,13 @@
           <Property Name="PhoneNum" Type="int" Nullable="false" />
           <Property Name="Name" Type="text" />
           <Property Name="FedId" Type="varchar" MaxLength="32" />
+          <Property Name="Pwd" Type="text" />
           <Property Name="gender" Type="char" MaxLength="1" />
-          <Property Name="FirstAccessTime" Type="datetime" />
-          <Property Name="LastAccessTime" Type="datetime" />
+          <Property Name="FirstAccessTime" Type="datetime" Precision="0" />
+          <Property Name="LastAccessTime" Type="datetime" Precision="0" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'def.honglin.userdetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'def.honglin.userdetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="userdetail">
           <Key>
             <PropertyRef Name="UserId" />
@@ -146,13 +84,12 @@
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="BirthDate" Type="text" Nullable="false" />
           <Property Name="IDCard" Type="text" Nullable="false" />
-          <Property Name="WebChat" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="WebChat" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="QQ" Type="int" />
           <Property Name="Email" Type="varchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'def.honglin.userjobinfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'def.honglin.userjobinfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="userjobinfo">
           <Key>
             <PropertyRef Name="UserId" />
@@ -164,12 +101,69 @@
           <Property Name="Job" Type="text" Nullable="false" />
           <Property Name="Place" Type="text" Nullable="false" />
           <Property Name="JobOrder" Type="int" />
-          <Property Name="EntryTime" Type="datetime" />
-          <Property Name="Position" Type="varchar" Nullable="false" MaxLength="32" />
-          <Property Name="LeaveTime" Type="datetime" />
+          <Property Name="EntryTime" Type="datetime" Precision="0" />
+          <Property Name="Position" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="LeaveTime" Type="datetime" Precision="0" />
         </EntityType>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityContainer Name="honglinModelStoreContainer">
+          <EntitySet Name="user" EntityType="Self.user" Schema="honglin" store:Type="Tables" />
+          <EntitySet Name="federateuser" EntityType="Self.federateuser" store:Type="Tables" store:Schema="honglin">
+            <DefiningQuery>SELECT
+`federateuser`.`UserId`, 
+`federateuser`.`Source`, 
+`federateuser`.`Name`, 
+`federateuser`.`FirstAccessTime`, 
+`federateuser`.`LastAccessTime`
+FROM `federateuser` AS `federateuser`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="usalechildren" EntityType="Self.usalechildren" store:Type="Tables" store:Schema="honglin">
+            <DefiningQuery>SELECT
+`usalechildren`.`UserId`, 
+`usalechildren`.`ChildId`, 
+`usalechildren`.`Reviewer`, 
+`usalechildren`.`AffectTime`, 
+`usalechildren`.`Comment`
+FROM `usalechildren` AS `usalechildren`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="usaleparent" EntityType="Self.usaleparent" store:Type="Tables" store:Schema="honglin">
+            <DefiningQuery>SELECT
+`usaleparent`.`UserId`, 
+`usaleparent`.`ParentId`, 
+`usaleparent`.`Comment`
+FROM `usaleparent` AS `usaleparent`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="uscorehistory" EntityType="Self.uscorehistory" store:Type="Tables" store:Schema="honglin">
+            <DefiningQuery>SELECT
+`uscorehistory`.`UserId`, 
+`uscorehistory`.`Event`, 
+`uscorehistory`.`Score`, 
+`uscorehistory`.`ChangeTime`, 
+`uscorehistory`.`Comment`
+FROM `uscorehistory` AS `uscorehistory`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="userdetail" EntityType="Self.userdetail" store:Type="Tables" store:Schema="honglin">
+            <DefiningQuery>SELECT
+`userdetail`.`UserId`, 
+`userdetail`.`BirthDate`, 
+`userdetail`.`IDCard`, 
+`userdetail`.`WebChat`, 
+`userdetail`.`QQ`, 
+`userdetail`.`Email`
+FROM `userdetail` AS `userdetail`</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="userjobinfo" EntityType="Self.userjobinfo" store:Type="Tables" store:Schema="honglin">
+            <DefiningQuery>SELECT
+`userjobinfo`.`UserId`, 
+`userjobinfo`.`Job`, 
+`userjobinfo`.`Place`, 
+`userjobinfo`.`JobOrder`, 
+`userjobinfo`.`EntryTime`, 
+`userjobinfo`.`Position`, 
+`userjobinfo`.`LeaveTime`
+FROM `userjobinfo` AS `userjobinfo`</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="honglinModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -239,6 +233,7 @@
           <Property Name="gender" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
           <Property Name="FirstAccessTime" Type="DateTime" />
           <Property Name="LastAccessTime" Type="DateTime" />
+          <Property Name="Pwd" Type="String" MaxLength="65535" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="userdetail">
           <Key>
@@ -320,6 +315,7 @@
           <EntitySetMapping Name="users">
             <EntityTypeMapping TypeName="honglinModel.user">
               <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -372,6 +368,7 @@
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

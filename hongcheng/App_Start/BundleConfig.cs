@@ -9,7 +9,7 @@ namespace hongcheng
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-1.*"));
+                        "~/Scripts/jquery-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
             "~/Scripts/jquery-ui*"));
@@ -28,6 +28,7 @@ namespace hongcheng
 
             bundles.Add(new StyleBundle("~/Content/css").Include(                      
                       "~/Content/site.css",
+                      "~/Content/jquery.mobile*",
                       "~/Content/weui.min.css"));            
 
             bundles.Add(new StyleBundle("~/Content/mobilecss").Include("~/Content/jquery.mobile*"));

@@ -5,16 +5,8 @@
     <title>@ViewBag.Title</title>
     <meta name="viewport" content="width=device-width" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    @Styles.Render("~/Content/mobileCss", "~/Content/css")    
-    <style type="text/css">
-        .ui-page {
-            background: #D3D3D3;
-        }
-    </style>
-    @*@Scripts.Render("~/bundles/modernizr")*@
-    @Scripts.Render("~/bundles/modernizr")
-    <script type="text/javascript"
-            src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="1105198962" data-redirecturi="http://localhost:35234/" charset="utf-8"></script> 
+    @Styles.Render("~/Content/mobilecss", "~/Content/css")    
+    @Scripts.Render("~/bundles/modernizr")            
 </head>
 <body style="color:cornflowerblue">
     <div data-role="page" data-theme="b">
@@ -34,14 +26,11 @@
             </footer>
         </div>
     </div>
-    @Scripts.Render("~/bundles/jquery")
-    @*<script>
-            $(document).on("mobileinit", function () {
-                $.mobile.ajaxEnabled = false;
-            });
-    </script>*@
- 
+    @Scripts.Render("~/bundles/jquery") 
     @Scripts.Render("~/bundles/jquerymobile")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
+<script type="text/javascript"
+        src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="1105198962" data-redirecturi="http://localhost:35234/" charset="utf-8"></script> 

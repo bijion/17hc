@@ -44,7 +44,8 @@ namespace hongcheng.Controllers
         {
             get
             {
-                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? new UserManager<IdentityUser>(new UserStore());
+                    //HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {

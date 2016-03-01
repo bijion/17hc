@@ -9,7 +9,7 @@ namespace hongcheng.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
+        public ActionResult Summary()
         {
             return View();
         }

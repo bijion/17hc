@@ -489,7 +489,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\HMall\Index.cshtml" />
-    <Content Include="Views\User\UserSummary.cshtml" />
+    <Content Include="Views\User\Summary.cshtml" />
     <Content Include="Views\User\AddMember.cshtml" />
     <Content Include="Views\Score\ScoreHistory.cshtml" />
     <Content Include="Views\User\FillUserInfo.cshtml" />
@@ -501,7 +501,7 @@
     <Content Include="Views\HMall\NewApply.cshtml" />
     <Content Include="Views\User\InfoList.cshtml" />
     <Content Include="Views\Bussi\More.cshtml" />
-    <Content Include="Views\File\CorpRule.cshtml" />
+    <Content Include="Views\User\File\CorpRule.cshtml" />
     <Content Include="Views\Shared\_MenuList.cshtml" />
   </ItemGroup>
   <ItemGroup>

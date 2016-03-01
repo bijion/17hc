@@ -44,8 +44,8 @@ namespace hongcheng.Controllers
         {
             get
             {
-                return _userManager ?? new UserManager<IdentityUser>(new UserStore());
-                    //HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                return _userManager ?? //new UserManager<IdentityUser>(new UserStore());
+                    HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
             }
             private set
             {
@@ -80,7 +80,10 @@ namespace hongcheng.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
+                    if (!returnUrl.ToLower().Contains("home"))
+                        return RedirectToLocal(returnUrl);
+                    else
+                        return RedirectToAction("Index", "User", null);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:

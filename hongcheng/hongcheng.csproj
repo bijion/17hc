@@ -488,24 +488,27 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\HMall\Index.cshtml" />
+    <Content Include="Views\HCMall\Index.cshtml" />
     <Content Include="Views\User\Summary.cshtml" />
-    <Content Include="Views\User\AddMember.cshtml" />
+    <Content Include="Views\Org\Add.cshtml" />
     <Content Include="Views\Score\ScoreHistory.cshtml" />
-    <Content Include="Views\User\FillUserInfo.cshtml" />
-    <Content Include="Views\User\FillJobInfo.cshtml" />
-    <Content Include="Views\User\FillUserRelation.cshtml" />
+    <Content Include="Views\User\AddPersonal.cshtml" />
+    <Content Include="Views\User\AddJob.cshtml" />
+    <Content Include="Views\User\AddRelation.cshtml" />
     <Content Include="Views\Manage\VerifyUser.cshtml" />
     <Content Include="Views\Manage\VerifyScore.cshtml" />
     <Content Include="Views\Manage\VerifyMember.cshtml" />
-    <Content Include="Views\HMall\NewApply.cshtml" />
-    <Content Include="Views\User\InfoList.cshtml" />
+    <Content Include="Views\HCMall\AddItem.cshtml" />
+    <Content Include="Views\User\Detail.cshtml" />
     <Content Include="Views\Bussi\More.cshtml" />
-    <Content Include="Views\User\File\CorpRule.cshtml" />
     <Content Include="Views\Shared\_MenuList.cshtml" />
+    <Content Include="Views\Org\Branches.cshtml" />
+    <Content Include="Views\Score\Export.cshtml" />
+    <Content Include="Views\Score\Help.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

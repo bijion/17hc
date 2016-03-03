@@ -7,14 +7,20 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     @Styles.Render("~/Content/mobilecss", "~/Content/css")    
     @Scripts.Render("~/bundles/modernizr")            
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 </head>
 <body style="color:cornflowerblue">
     <div data-role="page" data-theme="b">
         <div data-role="header">
             @if (IsSectionDefined("Header")) {
             @RenderSection("Header")
-            } else {
-            <h1>@ViewBag.Title</h1>
+            } else {            
+            <header class="bar bar-nav">
+                <a class="icon icon-left pull-left"></a>
+                <h1>@ViewBag.Title</h1>
+            </header>
             @Html.Partial("_LoginPartial")
             }
         </div>

@@ -14,6 +14,15 @@ namespace hongcheng.Controllers
             return View();
         }
 
+        public ActionResult ScoreHistory()
+        {
+            return View();
+        }
+
+        public ActionResult AllMember()
+        {
+            return View();
+        }
         public ActionResult InfoList()
         {
             return View();

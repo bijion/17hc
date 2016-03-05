@@ -6,26 +6,31 @@
     <meta name="viewport" content="width=device-width" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     @Styles.Render("~/Content/mobilecss", "~/Content/css")    
-    @Scripts.Render("~/bundles/modernizr")            
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>*@
 </head>
 <body style="color:cornflowerblue">
-    <div data-role="page" data-theme="b">
+    <div data-role="page" data-theme="a">
         <div data-role="header">
+            <h1>@ViewBag.Title</h1>
             @if (IsSectionDefined("Header")) {
             @RenderSection("Header")
-            } else {            
-            <header class="bar bar-nav">
-                <a class="icon icon-left pull-left"></a>
-                <h1>@ViewBag.Title</h1>
-            </header>
-            @Html.Partial("_LoginPartial")
+            }
+            else {                
+                    <div data-role="navbar">
+                        <ul style="list-style:none">
+                            <li><a href="/Home/Index">首页</a></li>                                                  
+                            @Html.Partial("_LoginPartial")
+                        </ul>
+                    </div>                                      
             }
         </div>
-        <div data-role="content">
+        <div data-role="content" class="ui-content">
             @RenderBody()
+            <hr />
+            <hr />
             <hr />
             <footer>
                 <p>&copy; @DateTime.Now.Year - 红林电商网</p>

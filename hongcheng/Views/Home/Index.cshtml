@@ -8,35 +8,8 @@
 </div>*@
 
 <ul data-role="listview" data-inset="true">    
-    <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-    <li>@Html.ActionLink("登陆", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("我的主页", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>    
     <li>@Html.ActionLink("关于", "About", "Home")</li>
     <li>@Html.ActionLink("联系我们", "Contact", "Home")</li>
 </ul>
-
-<div class="weui_cells_title">红林电商</div>
-<div class="weui_cells weui_cells_access">
-
-    <a class="weui_cell" href="#">
-        <div class="weui_cell_hd">
-            <img src="" alt="icon" style="width:20px;margin-right:5px;display:block">
-        </div>
-        <div class="weui_cell_bd weui_cell_primary">
-            <p>cell standard</p>
-        </div>
-        <div class="weui_cell_ft">
-            说明文字
-        </div>
-    </a>
-    <a class="weui_cell" href="#">
-        <div class="weui_cell_hd">
-            <img src="" alt="icon" style="width:20px;margin-right:5px;display:block">
-        </div>
-        <div class="weui_cell_bd weui_cell_primary">
-            <p>cell standard</p>
-        </div>
-        <div class="weui_cell_ft">
-            说明文字
-        </div>
-    </a>
-</div>

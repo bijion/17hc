@@ -1,0 +1,37 @@
+﻿@using DAL.Models;
+@model hongcheng.Models.UserListModel
+@{
+    ViewBag.Title = "用户列表";
+}
+
+<form class="ui-filterable">    
+    <input id="myFilter" data-type="search" placeholder="快速搜索姓名">
+</form>
+
+<ul data-role="listview" data-filter="true" data-input="#myFilter" >
+    @{
+        foreach (UserBasicInfo item in Model.List)
+        {
+            <li class="ui-checkbox-on" >                
+                <div data-role="collapsible">                                        
+                    <h1>@item.Name</h1>
+                    <table align="left">
+                        <tr>
+                            <td>电话</td>
+                            <td>@item.PhoneNum</td>
+                        </tr>
+                        <tr>
+                            <td>注册时间</td>
+                            <td>@item.RegisterTime</td>
+                        </tr>                      
+                        <tr>
+                            <td><input type="button" value="批准注册" class="ui-icon-action" /></td>
+                            <td><input type="button" value="删除此用户" class="ui-icon-action" /></td>
+                        </tr>  
+                    </table>
+                </div>
+            </li>
+        }
+    }
+</ul>
+
